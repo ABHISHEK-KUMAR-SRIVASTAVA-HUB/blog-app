@@ -1,0 +1,54 @@
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('img/post-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Man must explore, and this is exploration at its greatest</h1>
+                    <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
+                    <span class="meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<div class="container">
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form name="postBlogForm" ng-submit="postBlog(postBlogForm)" novalidate>
+            <div class="row control-group">
+                <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <label>Title</label>
+                    <input type="text" class="form-control" ng-model="blog.title" placeholder="Title" id="name" required data-validation-required-message="Please enter title.">
+                </div>
+            </div>
+           
+            <div class="row control-group">
+                <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <label>Description</label>
+                    <textarea rows="5" class="form-control" ng-model="blog.description" placeholder="Description" id="message" required data-validation-required-message="Please enter a description."></textarea>
+                </div>
+            </div>
+            <div class="row control-group">
+                <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <p style="font-family: 'Lora', 'Times New Roman', serif;font-size: 20px;">Upload a file</p>
+                    <div class="upload">
+                            <input type="file" class="form-control" file-model="myFile" placeholder="Upload a file" name="upload a file">
+                    </div>
+                   
+                </div>
+             </div>
+            <br>
+            <div id="success"></div>
+            <div class="row">
+                <div class="form-group col-xs-12">
+                    <button type="submit" class="btn btn-default">Post</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</div>

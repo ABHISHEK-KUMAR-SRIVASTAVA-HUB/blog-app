@@ -1,0 +1,33 @@
+<div class="modal-dialog">
+    <form name="loginForm" id="loginForm" ng-submit="auth(loginForm)" novalidate>
+      <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">LOGIN
+                <span class="text-danger pull-right" ng-if="!loginForm.$valid && submitted" >All fields required!</span>
+                <span class="text-danger pull-right" ng-if="authFailed">Oops!, wrong username or password</span> 
+            </h4>
+        </div>
+        <div class="modal-body">
+            <div class="row control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                  <label>Email Id</label>
+                  <input type="email" ng-model="user.username" class="form-control" placeholder="Email ID" name="username" required>
+              </div>
+            </div>
+            <div ng-if="otpSent" class="row control-group">
+                <div class="form-group col-xs-12 floating-label-form-group controls">
+                  <label>OTP</label>
+                  <input type="number"  ng-model="user.password" class="form-control" placeholder="OTP" name="OTP" required  >
+               </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button ng-if="!otpSent" type="button" class="btn btn-default" ng-click="sendOtp(loginForm)" autofocus>
+            <span ng-show="sendOtpText == 'Sending OTP'"><i class='fa fa-circle-o-notch fa-spin'></i>&nbsp;&nbsp;</span>{{sendOtpText}}
+          </button>
+        	<button ng-if="otpSent" type="submit" class="btn btn-default" ng-submit="auth(loginForm)" autofocus>SUBMIT</button>
+       	 	<button type="button" class="btn btn-default" ng-click="closeModal()" data-dismiss="modal">CANCEL</button>
+        </div>
+      </div>
+    </form>
+</div>

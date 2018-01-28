@@ -1,0 +1,76 @@
+
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Suvichaar</h1>
+                    <hr class="small">
+                    <span class="subheading">Share your ideas to people</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+             
+            <table class="table">
+                <tfoot>
+                    <td colspan="6">
+                        <div class="pagination pull-right ">
+                            <ul>
+                                <li ng-class="{disabled: currentPage == 0}">
+                                    <a href ng-click="prevPage()">« Prev</a>
+                                </li>
+                                <li ng-repeat="n in range(pagedItems.length)"
+                                    ng-class="{active: n == currentPage}"
+                                ng-click="setPage()">
+                                    <a href ng-bind="n + 1">1</a>
+                                </li>
+                                <li ng-class="{disabled: currentPage == pagedItems.length - 1}">
+                                    <a href ng-click="nextPage()">Next »</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tfoot>
+                <tbody>
+
+                    <tr ng-repeat="blog in pagedItems[currentPage] ">
+                        <td ng-click="showDetailById(blog['_id'])">
+                            <div class="post-preview">
+                                <a href="javascript:void(0)">
+                                    <h2 class="post-title" ng-bind="blog.title">
+                                    </h2>
+                                    <h3 class="post-subtitle" ng-bind="blog.description">
+                                    </h3>
+                                </a>
+                                <p class="post-meta">Posted by <a href="javascript:void(0)" ng-bind="blog.postedBy" ></a> on September 24, 2014</p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+           
+            <!-- Pager 
+            <ul class="pager">
+            
+                <li class="previous" ng-show="currentPage > 0" >
+                    <a href="#" ng-click="prevPage()" >Newer Posts &larr;</a>
+                </li>
+                <li class="next" ng-hide="currentPage == pagedItems.length - 1">
+                    <a href="#"  ng-click="nextPage()" >Older Posts &rarr;</a>
+                </li>
+            </ul>
+            -->
+        </div>
+    </div>
+</div>
+
+<hr>

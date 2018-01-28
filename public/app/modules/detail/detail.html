@@ -1,0 +1,26 @@
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('data:image/JPG;base64,{{blog.image}}');margin-top: 3.5%;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="page-heading">
+                    <h1 ng-bind="blog.postedBy"></h1>
+                    <hr class="small">
+                    <span class="subheading" ng-bind="blog.url"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <p ng-bind="blog.description" >Want to get in touch with me? Fill out the form below to send me a message and I will try to get back to you within 24 hours!</p>
+        </div>
+    </div>
+</div>
+
+<hr>
+
